@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="shortcut icon" href="favicon-32x32.png" type="image/x-icon">
+		<style type="text/css">
+			.img{
+  display: block;
+  margin: 0 auto;
+			}
+*{
+    padding: 0;
+    margin: 0;
+}
+.img {
+
+    width: 100%;
+    height: 400px;
+    background: url(FW-MLP-Banner-Summer-2000x400.jpg) no-repeat center top;
+}
+.img-overlay{
+    width: 100%;
+    height: 100%;
+    background: rgba(146, 210, 231,0.6);
+}
+table{
+	border: 1px solid black;
+}
+#footer-separator {background: #3d3f47}
+
+
+
+
+      .codingText {
+        border: black 1px solid;
+        border-radius: 25px;
+        padding: 1rem;
+        background-color: rgb(146, 210, 231);
+        color: black;
+      }
+
+ .comm {
+ 	color: grey;
+ }
+
+
+
+
+
+		</style>
+</head>
+<body>
+
+
+<a id="nav-toggle"><i class="icon-menu"></i></a>
+
+   <div class="img">
+
+   <div class="img-overlay"> 
+   	<br>
+   	<div class="container">
+   <div class="dropdown">
+  <input type="image" src="picture.png" class=" dropdown-toggle"  id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <a href="#Гайд_по_использованию_ультразвукового_датчика_HC-SR04_с_Arduino" button type="button" class="dropdown-item" type="button">Гайд по использованию ультразвукового датчика HC-SR04 с Arduino</button></a>
+
+    <a href="#Описание" button type="button" class="dropdown-item" type="button">Описание</button></a>
+
+    <a href="#Функции" button type="button" class="dropdown-item" type="button">Функции</button></a>
+
+    <a href="#Назначение_контактов_HC-SR04" button type="button" class="dropdown-item" type="button">Назначение контактов HC-SR04</button></a>
+
+    <a href="#Использование_HC-SR04_с_платой_Arduino" button type="button" class="dropdown-item" type="button">Использование HC-SR04 с платой Arduino</button></a>
+
+    <a href="#Схема" button type="button" class="dropdown-item" type="button">Схема</button></a>
+
+    <a href="#Код" button type="button" class="dropdown-item" type="button">Код</button></a>
+
+    <a href="#Код_с_библиотекой_NewPing" button type="button" class="dropdown-item" type="button">Код с библиотекой NewPing</button></a>
+
+    <a href="#Где_купить?" button type="button" class="dropdown-item" type="button">Где купить?</button></a>
+
+    <a href="#О_таймауте" button type="button" class="dropdown-item" type="button">О таймауте</button></a>
+  </div>
+</div> 
+</div>  	
+   </div>
+   </div>
+<br>
+<div class="container-fluid">
+<nav aria-label="breadcrumb">
+	<ol class="breadcrumb">
+
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item"><a href="#">Library</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Arduino</li>
+  </ol>
+</nav>
+</div>
+
+
+
+<!--------------------------------------------------------------------------------------------------------->
+<p>
+	<br>
+</p>
+<!--------------------------------------------------------------------------------------------------------->
+   <div class="container">
+
+
+
+
+
+
+
+
+
+<nav class="nav flex-column">
+  <a class="nav-link active" href="#Гайд_по_использованию_ультразвукового_датчика_HC-SR04_с_Arduino">1 Гайд по использованию ультразвукового датчика HC-SR04 с Arduino</a>
+  <a class="nav-link" href="#Описание">1.1 Описание</a>
+  <a class="nav-link" href="#Функции">1.2 Функции</a>
+  <a class="nav-link" href="#Назначение_контактов_HC-SR04">1.3 Назначение контактов HC-SR04</a>
+  <a class="nav-link" href="#Использование_HC-SR04_с_платой_Arduino">1.4 Использование HC-SR04 с платой Arduino</a>
+  <a class="nav-link" href="#Схема">1.4.1 Схема</a>
+  <a class="nav-link" href="#Код">1.4.2 Код</a>
+  <a class="nav-link" href="#Код_с_библиотекой_NewPing">1.4.3 Код с библиотекой NewPing</a>
+  <a class="nav-link" href="#Где_купить?">1.5 Где купить?</a>
+  <a class="nav-link" href="#О_таймауте">1.6 О таймауте</a>
+</nav>
+
+<!--------------------------------------------------------------------------------------------------------->
+<p>
+	<br>
+</p>
+<!--------------------------------------------------------------------------------------------------------->
+<h1><span id="Гайд_по_использованию_ультразвукового_датчика_HC-SR04_с_Arduino"></span>Гайд по использованию ультразвукового датчика HC-SR04 с Arduino</span></h1>
+<p>Эта статья – об ультразвуковом датчике HC-SR04. Она объясняет, как он работает, рассказывает о некоторых его функциях, а также содержит скетч Arduino, который вы можете использовать в своих проектах.
+</p>
+<!--------------------------------------------------------------------------------------------------------->
+<p>
+	<br>
+</p>
+<!--------------------------------------------------------------------------------------------------------->
+<h2><span id="Описание"></span>Описание</h2>
+<img src="Ultra_HC-SR04.png" decoding="async" width="330" height="388">
+<p>Ультразвуковой датчик HC-SR04 использует сонар, с помощью которого определяет расстояние до объекта, как это делают летучие мыши. Кроме того, этот датчик отличается высокой точностью и простотой использования. Диапазон измеряемого расстояния – <b>от 2 до 400 см</b>. В отличие от дальномеров, датчику HC-SR04 не мешает ни солнечный свет, ни черные материалы, но ему трудно определять акустически мягкие материалы вроде тканей. В комплекте с HC-SR04 также идет ультразвуковой приемопередатчик.
+</p>
+<!--------------------------------------------------------------------------------------------------------->
+<p>
+	<br>
+</p>
+<!--------------------------------------------------------------------------------------------------------->
+<h2><span id="Функции"></span>Функции</h2>
+<p>Датчик HC-SR04 обладает следующими функциями:
+</p>
+<ul><li><b>Питание:</b> +5 вольт постоянного тока</li>
+<li><b>Сила тока в состоянии покоя:</b> не более 2 мА</li>
+<li><b>Сила тока во время работы:</b> 15 мА</li>
+<li><b>Эффективный угол при измерении:</b> не более 15°</li>
+<li><b>Диапазон измеряемого состояния:</b> от 2 до 400 см</li>
+<li><b>Разрешение:</b> 0,3 см</li>
+<li><b>Рабочий угол при измерении:</b> 30°</li>
+<li><b>Продолжительность импульса для триггера:</b> 10 мкс</li>
+<li><b>Размеры:</b> 45 мм х 20 мм х 15 мм</li></ul>
+<!--------------------------------------------------------------------------------------------------------->
+<p>
+	<br>
+</p>
+<!--------------------------------------------------------------------------------------------------------->
+<h2><span id="Назначение_контактов_HC-SR04"></span>Назначение контактов HC-SR04</h2>
+<ul><li><b>Контакт VCC</b> – для постоянного тока +5 вольт</li>
+<li><b>Контакт Trig</b> – для запуска измерения</li>
+<li><b>Контакт Echo</b> – для выдачи измеренных данных</li>
+<li><b>Контакт GND</b> – для заземления</li></ul>
+<!--------------------------------------------------------------------------------------------------------->
+<p>
+	<br>
+</p>
+<!--------------------------------------------------------------------------------------------------------->
+<h2><span id="Использование_HC-SR04_с_платой_Arduino"></span>Использование HC-SR04 с платой Arduino</h2>
+<p>Датчик HC-SR04 очень популярен среди тех, кто занимается разработкой проектов на базе Arduino. Поэтому я решил найти для него в интернете специальный скетч. В нем ультразвуковой датчик определяет расстояние до объекта, а затем передает эти данные на монитор порта <b>IDE Arduino</b>. Все очень просто.
+</p>
+<p><b>Примечание:</b> Чтобы упростить использование датчика HC-SR04, можно воспользоваться библиотекой NewPing для Arduino.
+</p>
+<!--------------------------------------------------------------------------------------------------------->
+<p>
+	<br>
+</p>
+<!--------------------------------------------------------------------------------------------------------->
+<h3><span id="Схема"></span>Схема</h3>
+<img src="Schematics.png" width="100%" height="50%">
+<!--------------------------------------------------------------------------------------------------------->
+<p>
+	<br>
+</p>
+<!--------------------------------------------------------------------------------------------------------->
+<h3><span id="Код"></span>Код</h3>
+<div class="  mw-highlight mw-content-ltr" dir="ltr"><pre>
+	<p class="codingText">
+		<span class="comm"><i>
+/*
+ * Автор – Руи Сантос (Rui Santos); http://randomnerdtutorials.com
+ * 
+ * Скетч сделан для руководства по ультразвуковому датчику HC-SR04
+ *
+ * Подключение контактов:
+ * VCC: к +5 вольтам постоянного тока
+ * Trig (входной): к контакту 11
+ * Echo (выходной): к контакту 12
+ * GND: к контакту GND
+ */
+</i></span>
+ 
+int trigPin = 11;  <span class="comm">  <i>// Trig – зеленый провод-перемычка</i></span>
+int echoPin = 12;  <span class="comm"> <i> // Echo – желтый провод-перемычка</i> </span>
+long duration, cm, inches;
+ 
+void setup() {
+ <span class="comm"> <i>// открываем последовательный порт:</i></span>
+  Serial.begin (9600);
+ <span class="comm"> <i>// задаем входные и выходные контакты: </i> </span>
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+}
+ 
+void loop()
+{
+  
+ <span class="comm"><i> // датчик запускается импульсом HIGH продолжительностью 10 мкс
+  // или более; но перед этим нужно подать короткий импульс LOW,
+  // чтобы Trig в конце концов получил четкий импульс HIGH:</i></span>
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(5);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+ 
+  <span class="comm"><i>// считываем сигнал от датчика; продолжительность импульса HIGH –
+  // это время, прошедшее от отправки импульса 
+  // до получения эха от объекта:</i></span>
+  pinMode(echoPin, INPUT);
+  duration = pulseIn(echoPin, HIGH);
+ 
+  <span class="comm"><i>// конвертируем время в расстояние:</i> </span>
+  cm = (duration/2) / 29.1;
+  inches = (duration/2) / 74; 
+  
+  Serial.print(inches);
+  Serial.print("in, ");  <span class="comm"><i>//  "дюймов, "</i></span>
+  Serial.print(cm);
+  Serial.print("cm"); <span class="comm"><i> //  "сантиметров" </i></span>
+  Serial.println();
+  
+  delay(250);
+}
+</p>
+</pre></div>
+<!--------------------------------------------------------------------------------------------------------->
+<p>
+	<br>
+</p>
+<!--------------------------------------------------------------------------------------------------------->
+<h3><span id="Код_с_библиотекой_NewPing"></span>Код с библиотекой NewPing</h3>
+<p>Ниже – скетч для тех же целей, но с использованием библиотеки NewPing.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre><span></span>
+	<p class="codingText">
+		<span class="comm"><i>
+/*
+ * Создано на: http://playground.arduino.cc/Code/NewPing
+*/ </i></span>
+
+#include &lt;NewPing.h&gt;
+ 
+#define TRIGGER_PIN 11
+#define ECHO_PIN 12
+#define MAX_DISTANCE 200
+ 
+NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE);
+<span class="comm"><i>// настройка объекта NewPing: контакты и максимальная дистанция</i></span>
+ 
+void setup() {
+   Serial.begin(9600);
+}
+ 
+void loop() {
+   delay(50);
+   unsigned int uS = sonar.ping_cm();
+   Serial.print(uS);
+   Serial.println(“cm”);<span class="comm"> <i> //  "сантиметров" </i></span>
+}
+</pre></div>
+</p>
+<!--------------------------------------------------------------------------------------------------------->
+<p>
+	<br>
+</p>
+<!--------------------------------------------------------------------------------------------------------->
+
+<h2><span id="Где_купить?"></span>Где купить?</h2>
+<div class="card" style="width: 18rem;"><span id="Где_купить?"></span>
+  <img src="HC-SR04_1.jpg" class="card-img-top">
+  <div class="card-body">
+    <h5 class="card-title">HC-SR04_1</h5>
+    <p class="card-text">Поиск предложений для покупки датчика</p>
+    <a href="http://ebay.to/1UzSdYv" button type="button" class="btn btn-primary">Найти</a></button>
+  </div>
+</div>
+<!--------------------------------------------------------------------------------------------------------->
+<p>
+	<br>
+</p>
+<!--------------------------------------------------------------------------------------------------------->
+<h2><span id="О_таймауте"></span>О таймауте</h2>
+<p>Если HC-SR04 не получит эхо, то выходной сигнал никогда не перейдет в состояние LOW. У датчика <b>Devantec</b> таймаут составляет <b>36 мс</b>, а у <b>Parallax</b> – <b>28 мс</b>. Если вы используете функцию pulseIn(), как в первом скетче, то при отсутствии эха программа зависнет на <b>1 секунду</b> – это таймаут для pulseIn() по умолчанию. Если вы хотите изменить время таймаута, то это значение задается в третьем параметре функции pulseIn().
+</p>
+<p>Если HC-SR04 будет измерять расстояние <b>300 см</b>, то полный путь сигнала туда-обратно составит <b>600 см</b>, а время пути – около <b>20 мс</b>. Следовательно, таймаут нужно выставить чуть выше этого значения: на <b>25</b> или <b>30 мс</b>.
+</p>
+<p>Кроме того, вы можете подключить HC-SR04 всего к одному контакту Arduino. Для этого контакты Trig и Echo нужно подключить друг к другу с использованием резистора на <b>2200 Ом</b>, а затем подключить контакт Trig к Arduino. Подробнее ищите в статьях об <b>1</b>-контактном использовании ультразвуковых датчиков.
+</p>
+<p>Если вы используете HC-SR04 вместе с <b>PicAxe</b>, то его тактовую частоту нужно поднять как минимум <b>до 8 МГц</b>. В противном случае вы не увидите начало эхо-импульса, из-за чего функция pulseIn() никогда не запустится. HC-SR04 отлично работает с <b>BS2</b>.
+</p>
+<!--------------------------------------------------------------------------------------------------------->
+<p>
+	<br>
+</p>
+<!--------------------------------------------------------------------------------------------------------->
+<form>
+	<div class="form-group">
+    <label for="exampleFormControlTextarea1">Оставьте отзыв о сайте :)</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Ввод
+</button>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Секретное модальное окно B^)</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       Спасибо за отзыв
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+        <button type="button" class="btn btn-primary">Сохранить</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</form>
+<!--------------------------------------------------------------------------------------------------------->
+<p>
+	<br>
+</p>
+<!--------------------------------------------------------------------------------------------------------->
+</div>
+
+
+
+
+<div class="card bg-dark">
+
+  <div class="card-header">
+    
+  </div>
+  <div class="container">
+  <div class="card-body"><font color="grey"> ©2020 Random copyright </font><div style="display:block;float:right;clear: right;font-size: .85em;font-weight: bold; text-transform: uppercase;"><font color="grey"> Powered by<a target="_blank" href="https://bootstrap-4.ru/" > Bootstrap</a></div>
+</div>
+  </div>
+</div>
+
+
+<script language="javascript" src="js/jquery-3.5.1.slim.min.js"></script>
+<script language="javascript" src="js/popper.min.js"></script>
+<script language="javascript" src="js/bootstrap.min.js"></script>
+</body>
+</html>
